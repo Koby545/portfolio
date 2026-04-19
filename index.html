@@ -44,7 +44,7 @@ nav a {
 /* HERO */
 header {
     text-align: center;
-    padding: 130px 20px 60px;
+    padding: 130px 20px 40px;
 }
 
 header h1 {
@@ -58,13 +58,27 @@ header h1 {
 header p {
     color: #a5b4fc;
     font-size: 18px;
-    margin-top: 10px;
 }
 
 header .sub {
     color: #94a3b8;
     font-size: 14px;
     margin-top: 10px;
+}
+
+/* FEATURE VIDEO */
+.feature-video {
+    max-width: 1000px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+}
+
+.feature-video iframe {
+    width: 100%;
+    height: 520px;
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
 /* SECTIONS */
@@ -76,13 +90,10 @@ section {
     margin-bottom: 70px;
 }
 
-/* BACKGROUNDS */
 .gamedev { background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(255,255,255,0.02)); }
-.media { background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(255,255,255,0.02)); }
 .fullstack { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(255,255,255,0.02)); }
 .certificates { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(255,255,255,0.02)); }
 
-/* TITLES */
 h2 {
     font-size: 28px;
     margin-bottom: 30px;
@@ -121,13 +132,6 @@ h2 {
 .card:hover {
     transform: translateY(-6px);
     border-color: #60a5fa;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
-
-/* FEATURED */
-.featured {
-    border: 1px solid #60a5fa;
-    box-shadow: 0 0 40px rgba(96,165,250,0.2);
 }
 
 /* BUTTON */
@@ -146,18 +150,20 @@ a.button {
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 @media (min-width: 900px) {
-    .skills-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
 }
 
 .skill-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 18px;
-    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #d1d5db;
 }
 
 /* FOOTER */
@@ -173,7 +179,6 @@ footer {
 
 <nav>
     <a href="#gamedev">Game Dev</a>
-    <a href="#media">Demo</a>
     <a href="#fullstack">Fullstack</a>
     <a href="#certs">Certifications</a>
 </nav>
@@ -182,20 +187,19 @@ footer {
     <h1>Yaakov Amoyal</h1>
     <p>Game & Software Developer</p>
     <div class="sub">
-        Unity Systems • Gameplay Engineering • Full-Stack Development
+        Unity Gameplay Systems • C# • Full-Stack Development
     </div>
 </header>
+
+<!-- BIG VIDEO -->
+<div class="feature-video">
+<iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
+</div>
 
 <section id="gamedev" class="gamedev">
 <h2>🎮 Game Development</h2>
 
 <div class="grid">
-
-<div class="card featured">
-    <h3>⭐ Full Gameplay System (Featured Project)</h3>
-    <p>End-to-end Unity system including movement, physics, audio, UI, scoring and collectibles.</p>
-    <a class="button" href="https://www.youtube.com/watch?v=4z-PHJ6yy6w">Watch Demo</a>
-</div>
 
 <div class="card">
     <h3>Bricks Game</h3>
@@ -205,13 +209,13 @@ footer {
 
 <div class="card">
     <h3>Maze PowerUps</h3>
-    <p>3D gameplay system with modular power-up mechanics and level structure.</p>
+    <p>3D gameplay system with modular power-up mechanics.</p>
     <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Card Game (WebGL)</h3>
-    <p>Short gameplay loop with progression mechanics and Unity WebGL build.</p>
+    <p>Playable browser-based Unity game with progression loop.</p>
     <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
 </div>
 
@@ -225,13 +229,13 @@ footer {
 
 <div class="card">
     <h3>Shoplist App</h3>
-    <p>Mobile application with shared lists and real-time sync architecture.</p>
+    <p>Android app with shared lists and real-time synchronization.</p>
     <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Cake Shop Web App</h3>
-    <p>Full-stack system built with Node.js and MongoDB backend.</p>
+    <p>Full-stack system using Node.js and MongoDB.</p>
     <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
 </div>
 
@@ -244,6 +248,31 @@ footer {
 <div class="card">
     <h3>B.Sc. Computer Science</h3>
     <p>College of Management Academic Studies — GPA 84</p>
+</div>
+
+<div class="card">
+    <h3>UI/UX Certificate</h3>
+    <p>INT College (Mar 2023 – Jun 2023)</p>
+</div>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<strong>Game Development:</strong> Unity, C#, Physics, UI Systems, Gameplay Design
+</div>
+
+<div class="skill-card">
+<strong>Software Engineering:</strong> OOP, Data Structures, Algorithms, REST APIs
+</div>
+
+<div class="skill-card">
+<strong>Fullstack:</strong> Node.js, MongoDB, JavaScript, Android (Java)
+</div>
+
+<div class="skill-card">
+<strong>Core CS:</strong> Operating Systems, Networking, Databases, Design Patterns
+</div>
+
 </div>
 
 </section>
@@ -259,7 +288,6 @@ const observer = new IntersectionObserver(entries => {
         if(e.isIntersecting) e.target.classList.add('show');
     });
 }, {threshold: 0.15});
-
 cards.forEach(c => observer.observe(c));
 </script>
 
