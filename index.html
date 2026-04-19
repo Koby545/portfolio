@@ -186,6 +186,61 @@ a.button {
     text-align: center;
 }
 
+.skills {
+    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(255,255,255,0.02));
+    border-radius: 22px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+@media (min-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 18px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #60a5fa;
+}
+
+/* COLORS BY LEVEL */
+.skill-card.strong h3 {
+    color: #34d399;
+}
+
+.skill-card.medium h3 {
+    color: #60a5fa;
+}
+
+.skill-card.familiar h3 {
+    color: #a78bfa;
+}
+
+.skill-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+.skill-card i {
+    margin-right: 8px;
+    color: #93c5fd;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -330,6 +385,46 @@ Designed as a full production-style gameplay system integrating multiple subsyst
     <p>
     Publishing • Programming • 2D • 3D • Audio • Editor • OOP • Scene Flow
     </p>
+</div>
+
+</section>
+
+    <!-- SKILLS MATRIX -->
+<section class="skills">
+
+<h2>⚙️ Skills Matrix</h2>
+
+<div class="skills-grid">
+
+<!-- STRONG -->
+<div class="skill-card strong">
+    <h3>🔥 Strong</h3>
+
+    <p><i class="fa-brands fa-unity"></i> Unity</p>
+    <p><i class="fa-solid fa-code"></i> C#</p>
+    <p><i class="fa-solid fa-cubes"></i> Game Systems</p>
+    <p><i class="fa-solid fa-sitemap"></i> OOP Design</p>
+</div>
+
+<!-- MEDIUM -->
+<div class="skill-card medium">
+    <h3>⚡ Medium</h3>
+
+    <p><i class="fa-brands fa-js"></i> JavaScript</p>
+    <p><i class="fa-brands fa-node"></i> Node.js</p>
+    <p><i class="fa-solid fa-database"></i> MongoDB</p>
+    <p><i class="fa-solid fa-globe"></i> REST APIs</p>
+    <p><i class="fa-solid fa-code"></i> C++</p>
+    <p><i class="fa-brands fa-java"></i> Java</p>
+</div>
+
+<!-- FAMILIAR -->
+<div class="skill-card familiar">
+    <h3>🧠 Familiar</h3>
+    <p><i class="fa-brands fa-python"></i> Python</p>
+    <p><i class="fa-solid fa-paintbrush"></i> Blender</p>
+</div>
+
 </div>
 
 </section>
