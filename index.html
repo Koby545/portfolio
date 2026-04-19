@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yaakov Amoyal | Game & Software Developer</title>
+<title>Yaakov Amoyal | Portfolio</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -22,7 +20,7 @@ body {
     color: white;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     position: fixed;
     top: 0;
@@ -43,10 +41,6 @@ nav a {
     font-size: 14px;
 }
 
-nav a:hover {
-    color: white;
-}
-
 /* HERO */
 header {
     text-align: center;
@@ -63,7 +57,6 @@ header h1 {
 
 header p {
     color: #a5b4fc;
-    font-size: 18px;
 }
 
 /* SECTIONS */
@@ -76,21 +69,10 @@ section {
 }
 
 /* BACKGROUNDS */
-.gamedev {
-    background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(255,255,255,0.02));
-}
-
-.media {
-    background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(255,255,255,0.02));
-}
-
-.fullstack {
-    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(255,255,255,0.02));
-}
-
-.certificates {
-    background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(255,255,255,0.02));
-}
+.gamedev { background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(255,255,255,0.02)); }
+.media { background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(255,255,255,0.02)); }
+.fullstack { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(255,255,255,0.02)); }
+.certificates { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(255,255,255,0.02)); }
 
 /* TITLES */
 h2 {
@@ -108,9 +90,7 @@ h2 {
 }
 
 @media (min-width: 900px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    .grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* CARDS */
@@ -121,19 +101,11 @@ h2 {
     border-radius: 18px;
     transition: 0.3s;
     backdrop-filter: blur(12px);
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .card:hover {
     transform: translateY(-6px);
     border-color: #60a5fa;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
 /* HERO VIDEO */
@@ -142,7 +114,6 @@ h2 {
     border: 1px solid rgba(255,255,255,0.15);
     padding: 25px;
     border-radius: 20px;
-    margin-bottom: 25px;
 }
 
 .hero-card iframe {
@@ -168,19 +139,24 @@ a.button {
 .badges-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px; /* 👈 FIX SPACING */
-    margin-top: 20px;
+    gap: 40px;
+    margin-top: 25px;
 }
 
-@media (min-width: 900px) {
-    .badges-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
+/* 🔧 FIXED OVERLAP HERE */
 .badge-card {
     padding: 30px;
     text-align: center;
+    margin-top: 10px;
+}
+
+.badge-card h3 {
+    margin-bottom: 15px;
+}
+
+.badge-box {
+    display: flex;
+    justify-content: center;
 }
 
 /* FOOTER */
@@ -189,24 +165,33 @@ footer {
     padding: 50px;
     color: #6b7280;
 }
+
+/* ANIMATION */
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <a href="#gamedev">Game Dev</a>
-    <a href="#media">Demo</a>
+    <a href="#media">Media</a>
     <a href="#fullstack">Fullstack</a>
-    <a href="#certs">Certifications</a>
+    <a href="#certs">Certificates</a>
 </nav>
 
-<!-- HERO -->
 <header>
     <h1>Yaakov Amoyal</h1>
-    <p>Game Developer | Unity | Full-Stack Engineer | C# & Systems Design</p>
+    <p>Game Developer | Unity | Full-Stack Engineer</p>
 </header>
 
 <!-- GAME DEV -->
@@ -218,19 +203,19 @@ footer {
 
 <div class="card">
     <h3>Bricks Game</h3>
-    <p>Arcade gameplay with persistence, UI, and score system.</p>
+    <p>Score system, persistence, UI.</p>
     <a class="button" href="https://github.com/Koby545/Data-Persistence-Project">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Maze PowerUps</h3>
-    <p>3D system design with power-ups and gameplay logic.</p>
+    <p>3D maze + gameplay systems + powerups.</p>
     <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Card Game (WebGL)</h3>
-    <p>Interactive Unity gameplay loop with progression system.</p>
+    <p>Progression-based gameplay loop.</p>
     <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
 </div>
 
@@ -244,19 +229,27 @@ footer {
 
 <div class="hero-card">
 
-<h3>Full Unity Gameplay System</h3>
+<h3>Full Unity Systems Demo</h3>
 
 <p>
-This project demonstrates a complete game loop:
-player movement, physics, audio system, background music,
-UI system, scoring, and collectible mechanics.
-</p>
-
-<p style="color:#a5b4fc">
-Designed as a full production-style gameplay system integrating multiple subsystems.
+Movement, physics, audio, music, UI, score system, coins, interactions.
 </p>
 
 <iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <h3>Feeding Animals</h3>
+    <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6">View</a>
+</div>
+
+<div class="card">
+    <h3>Fruit Ninja Style</h3>
+    <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131">View</a>
+</div>
 
 </div>
 
@@ -271,20 +264,16 @@ Designed as a full production-style gameplay system integrating multiple subsyst
 
 <div class="card">
     <h3>Shoplist App</h3>
-    <p>Mobile system with sync and shared lists.</p>
     <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Cake Shop Web App</h3>
-    <p>Full-stack system using Node.js & MongoDB.</p>
     <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Digital Bulletin System</h3>
-    <p>Multi-platform system (TV + Mobile + Backend REST API).</p>
-
     <a class="button" href="https://github.com/Koby545/FinalProject2024_Server">Server</a>
     <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp">TV</a>
     <a class="button" href="https://github.com/Koby545/FinalProject2024_MobileApp">Mobile</a>
@@ -300,53 +289,53 @@ Designed as a full production-style gameplay system integrating multiple subsyst
 
 <div class="card">
     <h3>B.Sc. Computer Science</h3>
-    <p>The College of Management Academic Studies</p>
-    <p>GPA: 84 | Graduated 2024</p>
+    <p>GPA 84 | College of Management Academic Studies</p>
 </div>
 
 <div class="badges-grid">
 
 <div class="card badge-card">
     <h3>Unity Essentials</h3>
-    <div data-iframe-width="180" data-iframe-height="300"
+    <div class="badge-box"
+    data-iframe-width="180"
+    data-iframe-height="300"
     data-share-badge-id="f4d0b76a-67f9-4485-92f1-bc1dbb0c7707"
     data-share-badge-host="https://www.credly.com"></div>
 </div>
 
 <div class="card badge-card">
     <h3>Unity Junior Programmer</h3>
-    <div data-iframe-width="180" data-iframe-height="300"
+    <div class="badge-box"
+    data-iframe-width="180"
+    data-iframe-height="300"
     data-share-badge-id="ccb14c14-0c32-45a4-ace2-0f5d4ed9a5c2"
     data-share-badge-host="https://www.credly.com"></div>
 </div>
 
 </div>
 
-<div class="card">
+<div class="card" style="margin-top:25px; padding:35px;">
     <h3>Additional Unity Training</h3>
     <p>
-    Publishing • Programming • 2D • 3D • Audio • Editor • OOP • Scene Flow
+        Publishing • Programming • 2D • 3D • Audio • Editor • OOP • Scene Flow
     </p>
 </div>
 
 </section>
 
 <footer>
-© 2026 Yaakov Amoyal — Game & Software Developer
+© 2026 Yaakov Amoyal
 </footer>
 
 <script>
 const cards = document.querySelectorAll('.card');
-
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
+    entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add('show');
     });
-}, {threshold: 0.15});
+}, {threshold:0.15});
 
-cards.forEach(card => observer.observe(card));
+cards.forEach(c => observer.observe(c));
 </script>
 
 <script async src="//cdn.credly.com/assets/utilities/embed.js"></script>
