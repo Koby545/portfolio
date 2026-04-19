@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yaakov Amoyal | Software & Game Developer</title>
+<title>Yaakov Amoyal | Developer Portfolio</title>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
@@ -21,97 +24,75 @@ body {
 header {
     text-align: center;
     padding: 100px 20px 70px;
-    animation: fadeDown 1s ease;
 }
 
 header h1 {
     font-size: 56px;
     margin: 0;
-    font-weight: 800;
 }
 
 header p {
-    color: #a5b4fc;
-    margin-top: 12px;
-    font-size: 18px;
+    color: #93c5fd;
+    margin-top: 10px;
 }
 
-/* ANIMATIONS */
-@keyframes fadeDown {
-    from {opacity:0; transform: translateY(-25px);}
-    to {opacity:1; transform: translateY(0);}
-}
-
-@keyframes fadeUp {
-    from {opacity:0; transform: translateY(20px);}
-    to {opacity:1; transform: translateY(0);}
-}
-
-/* SECTIONS */
+/* SECTION */
 section {
-    max-width: 1050px;
+    max-width: 1000px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 h2 {
     font-size: 26px;
     border-left: 4px solid #60a5fa;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* CARD */
 .card {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
     padding: 18px;
     margin: 15px 0;
-    backdrop-filter: blur(12px);
-    transition: 0.35s;
-    animation: fadeUp 0.8s ease;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover {
     transform: translateY(-6px);
     border-color: #60a5fa;
-    box-shadow: 0 10px 30px rgba(96,165,250,0.15);
+    box-shadow: 0 15px 30px rgba(96,165,250,0.15);
 }
 
-.card h3 {
-    margin: 0;
-}
-
-/* LINKS BUTTON STYLE */
+/* BUTTON */
 a.button {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
     border-radius: 10px;
-    background: #1d4ed8;
+    background: #2563eb;
     color: white;
-    font-weight: 600;
     text-decoration: none;
+    font-weight: 600;
     transition: 0.3s;
 }
 
 a.button:hover {
-    background: #2563eb;
+    background: #3b82f6;
     transform: scale(1.05);
 }
 
-/* TAG */
-.tag {
-    background: #1e293b;
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    margin-left: 6px;
-    color: #93c5fd;
-}
-
-/* GRID (for mobile friendly layout) */
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -124,10 +105,10 @@ a.button:hover {
     }
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    header h1 {font-size: 38px;}
-    header p {font-size: 14px;}
+/* ICON */
+.icon {
+    color: #60a5fa;
+    margin-right: 6px;
 }
 
 /* FOOTER */
@@ -136,6 +117,13 @@ footer {
     padding: 40px;
     color: #6b7280;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    header h1 {font-size: 38px;}
+}
+
+/* FADE IN ON SCROLL JS SUPPORT */
 </style>
 
 </head>
@@ -143,52 +131,50 @@ footer {
 <body>
 
 <header>
-    <h1>Yaakov Amoyal</h1>
-    <p>Software Engineer | Full-Stack Developer | Game Developer (Unity, C#)</p>
+    <h1><i class="fa-solid fa-code"></i> Yaakov Amoyal</h1>
+    <p>Software Engineer | Full-Stack | Game Developer (Unity)</p>
 </header>
 
 <section>
 
-<h2>About Me</h2>
+<h2><i class="fa-solid fa-user icon"></i> About Me</h2>
 
 <p>
-Computer Science graduate with experience in <b>Full-Stack Development</b> and <b>Game Development</b>.
+Computer Science graduate experienced in Full-Stack development and Unity game development.
 </p>
 
 <p>
-I build scalable web systems using Node.js, Express, and MongoDB, and develop Unity games with gameplay systems, AI, and interactive mechanics.
+I build backend systems, web apps, and interactive game mechanics with focus on clean architecture and scalability.
 </p>
-
-<p>Email: <a href="mailto:koby0304@gmail.com">koby0304@gmail.com</a></p>
 
 </section>
 
 <!-- FULLSTACK -->
 <section>
 
-<h2>Software & Web Projects</h2>
+<h2><i class="fa-solid fa-globe icon"></i> Software & Web Projects</h2>
 
 <div class="grid">
 
 <div class="card">
-    <h3>Online Shoplist App <span class="tag">Android</span></h3>
-    <p>Shopping list system with authentication and APIs.</p>
-    <a class="button" href="https://github.com/Koby545/AndroidAppProject" target="_blank">GitHub</a>
+    <h3><i class="fa-solid fa-cart-shopping icon"></i> Shoplist App</h3>
+    <p>Mobile app for shared shopping lists with authentication and real-time data.</p>
+    <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
 </div>
 
 <div class="card">
-    <h3>Cake Shop Web App <span class="tag">Full Stack</span></h3>
-    <p>E-commerce system using Node.js, Express, MongoDB.</p>
-    <a class="button" href="https://github.com/Koby545/CakeShop1" target="_blank">GitHub</a>
+    <h3><i class="fa-solid fa-cake-candles icon"></i> Cake Shop Web App</h3>
+    <p>Full-stack e-commerce system with Node.js, Express, MongoDB.</p>
+    <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
 </div>
 
 <div class="card">
-    <h3>Digital Bulletin System <span class="tag">Final Project</span></h3>
-    <p>3-part system: TV app + Mobile app + Backend server.</p>
+    <h3><i class="fa-solid fa-tv icon"></i> Bulletin System</h3>
+    <p>Multi-platform system (TV, mobile, backend) with REST API architecture.</p>
 
-    <a class="button" href="https://github.com/Koby545/FinalProject2024_Server" target="_blank">Server</a>
-    <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp" target="_blank">TV App</a>
-    <a class="button" href="https://github.com/Koby545/FinalProject2024_MobileApp" target="_blank">Mobile App</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_Server">Server</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp">TV</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_MobileApp">Mobile</a>
 </div>
 
 </div>
@@ -197,23 +183,26 @@ I build scalable web systems using Node.js, Express, and MongoDB, and develop Un
 <!-- GAME DEV -->
 <section>
 
-<h2>Game Development Projects</h2>
+<h2><i class="fa-solid fa-gamepad icon"></i> Game Development Projects</h2>
 
 <div class="grid">
 
 <div class="card">
-    <h3>Bricks Game <span class="tag">Unity</span></h3>
-    <a class="button" href="https://github.com/Koby545/Data-Persistence-Project" target="_blank">GitHub</a>
+    <h3>Bricks Game</h3>
+    <p>Brick breaker with save system, UI, and score tracking.</p>
+    <a class="button" href="https://github.com/Koby545/Data-Persistence-Project">GitHub</a>
 </div>
 
 <div class="card">
-    <h3>Maze PowerUps <span class="tag">Unity</span></h3>
-    <a class="button" href="https://github.com/Koby545/UnityFinalProject" target="_blank">GitHub</a>
+    <h3>Maze PowerUps</h3>
+    <p>3D maze system with procedural design and player power-ups.</p>
+    <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
 </div>
 
 <div class="card">
-    <h3>Card Game <span class="tag">WebGL</span></h3>
-    <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity" target="_blank">Play</a>
+    <h3>Card Game (WebGL)</h3>
+    <p>Short gameplay loop with progression and interactive mechanics.</p>
+    <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
 </div>
 
 </div>
@@ -222,18 +211,18 @@ I build scalable web systems using Node.js, Express, and MongoDB, and develop Un
 <!-- MEDIA -->
 <section>
 
-<h2>Additional Projects & Demos</h2>
+<h2><i class="fa-solid fa-video icon"></i> Demos & Work</h2>
 
 <div class="card">
-    <h3>Gameplay Systems Demo</h3>
+    <h3>Full Gameplay Demo</h3>
     <iframe width="100%" height="360"
     src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
 </div>
 
 <div class="card">
-    <h3>Unity Submission Projects</h3>
-    <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6" target="_blank">Feeding Animals</a>
-    <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">Fruit Ninja Style</a>
+    <h3>Unity Submissions</h3>
+    <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6">Animals Game</a>
+    <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131">Fruit Ninja Style</a>
 </div>
 
 </section>
@@ -241,6 +230,23 @@ I build scalable web systems using Node.js, Express, and MongoDB, and develop Un
 <footer>
 © 2026 Yaakov Amoyal — Software Engineer | Game Developer
 </footer>
+
+<!-- SCROLL ANIMATION -->
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+}, {threshold: 0.15});
+
+cards.forEach(card => {
+    observer.observe(card);
+});
+</script>
 
 </body>
 </html>
