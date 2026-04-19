@@ -12,7 +12,7 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #0b0f1a;
+    background: radial-gradient(circle at top, #0f172a, #0b0f1a);
     color: white;
     overflow-x: hidden;
 }
@@ -20,95 +20,114 @@ body {
 /* HERO */
 header {
     text-align: center;
-    padding: 90px 20px;
-    background: radial-gradient(circle at top, #1b2a4a, #0b0f1a);
-    animation: fadeDown 1s ease-out;
+    padding: 100px 20px 70px;
+    animation: fadeDown 1s ease;
 }
 
 header h1 {
-    font-size: 52px;
+    font-size: 56px;
     margin: 0;
     font-weight: 800;
 }
 
 header p {
-    color: #9aa4b2;
+    color: #a5b4fc;
     margin-top: 12px;
     font-size: 18px;
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {opacity:0; transform: translateY(-25px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
 }
 
 /* SECTIONS */
 section {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: auto;
     padding: 40px 20px;
 }
 
 h2 {
     font-size: 26px;
-    margin-bottom: 20px;
-    border-left: 4px solid #4da3ff;
+    border-left: 4px solid #60a5fa;
     padding-left: 10px;
+    margin-bottom: 20px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
     padding: 18px;
     margin: 15px 0;
-    border-radius: 14px;
-    transition: 0.3s;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    transition: 0.35s;
     animation: fadeUp 0.8s ease;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    border-color: #4da3ff;
-}
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+    border-color: #60a5fa;
+    box-shadow: 0 10px 30px rgba(96,165,250,0.15);
 }
 
 .card h3 {
-    margin-top: 0;
+    margin: 0;
 }
 
-a {
-    color: #4da3ff;
-    text-decoration: none;
+/* LINKS BUTTON STYLE */
+a.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #1d4ed8;
+    color: white;
     font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-a:hover {
-    text-decoration: underline;
+a.button:hover {
+    background: #2563eb;
+    transform: scale(1.05);
 }
 
 /* TAG */
 .tag {
-    background: #1f2a44;
+    background: #1e293b;
     padding: 3px 8px;
     border-radius: 6px;
     font-size: 12px;
     margin-left: 6px;
+    color: #93c5fd;
 }
 
-/* VIDEO */
-iframe {
-    width: 100%;
-    height: 360px;
-    border-radius: 12px;
-    margin-top: 10px;
-    border: none;
+/* GRID (for mobile friendly layout) */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    header h1 {font-size: 38px;}
+    header p {font-size: 14px;}
 }
 
 /* FOOTER */
@@ -116,36 +135,6 @@ footer {
     text-align: center;
     padding: 40px;
     color: #6b7280;
-    font-size: 14px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    header h1 {
-        font-size: 34px;
-    }
-
-    header p {
-        font-size: 14px;
-    }
-
-    iframe {
-        height: 220px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    .card {
-        padding: 14px;
-    }
-}
-
-/* subtle glow effect */
-.card:hover {
-    box-shadow: 0 0 20px rgba(77,163,255,0.15);
 }
 </style>
 
@@ -163,15 +152,11 @@ footer {
 <h2>About Me</h2>
 
 <p>
-Computer Science graduate with experience in both <b>Full-Stack development</b> and <b>Game Development</b>.
+Computer Science graduate with experience in <b>Full-Stack Development</b> and <b>Game Development</b>.
 </p>
 
 <p>
-I build scalable web applications using Node.js, Express, and MongoDB, and also develop Unity games with C# focusing on gameplay systems, AI, and interactive mechanics.
-</p>
-
-<p>
-I enjoy turning ideas into complete systems — from backend logic to playable game experiences.
+I build scalable web systems using Node.js, Express, and MongoDB, and develop Unity games with gameplay systems, AI, and interactive mechanics.
 </p>
 
 <p>Email: <a href="mailto:koby0304@gmail.com">koby0304@gmail.com</a></p>
@@ -183,23 +168,30 @@ I enjoy turning ideas into complete systems — from backend logic to playable g
 
 <h2>Software & Web Projects</h2>
 
+<div class="grid">
+
 <div class="card">
-    <h3>Online Shoplist App <span class="tag">Full Stack</span></h3>
-    <p>Android app for managing shared shopping lists with authentication and APIs.</p>
-    <a href="https://github.com/Koby545/AndroidAppProject" target="_blank">View Code</a>
+    <h3>Online Shoplist App <span class="tag">Android</span></h3>
+    <p>Shopping list system with authentication and APIs.</p>
+    <a class="button" href="https://github.com/Koby545/AndroidAppProject" target="_blank">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Cake Shop Web App <span class="tag">Full Stack</span></h3>
-    <p>E-commerce web app with Node.js, Express, and MongoDB backend.</p>
-    <a href="https://github.com/Koby545/CakeShop1" target="_blank">View Code</a>
+    <p>E-commerce system using Node.js, Express, MongoDB.</p>
+    <a class="button" href="https://github.com/Koby545/CakeShop1" target="_blank">GitHub</a>
 </div>
 
 <div class="card">
-    <h3>Digital Bulletin System <span class="tag">System Design</span></h3>
-    <p>Multi-platform system with REST API backend and mobile + TV apps.</p>
+    <h3>Digital Bulletin System <span class="tag">Final Project</span></h3>
+    <p>3-part system: TV app + Mobile app + Backend server.</p>
+
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_Server" target="_blank">Server</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp" target="_blank">TV App</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_MobileApp" target="_blank">Mobile App</a>
 </div>
 
+</div>
 </section>
 
 <!-- GAME DEV -->
@@ -207,24 +199,24 @@ I enjoy turning ideas into complete systems — from backend logic to playable g
 
 <h2>Game Development Projects</h2>
 
+<div class="grid">
+
 <div class="card">
     <h3>Bricks Game <span class="tag">Unity</span></h3>
-    <p>Brick breaker game with save system and leaderboard.</p>
-    <a href="https://github.com/Koby545/Data-Persistence-Project" target="_blank">View Code</a>
+    <a class="button" href="https://github.com/Koby545/Data-Persistence-Project" target="_blank">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Maze PowerUps <span class="tag">Unity</span></h3>
-    <p>3D maze with procedural systems and power-ups.</p>
-    <a href="https://github.com/Koby545/UnityFinalProject" target="_blank">View Code</a>
+    <a class="button" href="https://github.com/Koby545/UnityFinalProject" target="_blank">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Card Game <span class="tag">WebGL</span></h3>
-    <p>Playable card-based progression system.</p>
-    <a href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity" target="_blank">Play Game</a>
+    <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity" target="_blank">Play</a>
 </div>
 
+</div>
 </section>
 
 <!-- MEDIA -->
@@ -234,13 +226,14 @@ I enjoy turning ideas into complete systems — from backend logic to playable g
 
 <div class="card">
     <h3>Gameplay Systems Demo</h3>
-    <iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
+    <iframe width="100%" height="360"
+    src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
 </div>
 
 <div class="card">
     <h3>Unity Submission Projects</h3>
-    <a href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6" target="_blank">Feeding Animals Game</a><br>
-    <a href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">Fruit Ninja Style Game</a>
+    <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6" target="_blank">Feeding Animals</a>
+    <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">Fruit Ninja Style</a>
 </div>
 
 </section>
