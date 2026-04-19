@@ -1,3 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yaakov Amoyal | Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0a0f1a;
+    color: white;
+}
+
+/* HERO */
+header {
+    text-align: center;
+    padding: 90px 20px 60px;
+}
+
+header h1 {
+    font-size: 56px;
+    margin: 0;
+    background: linear-gradient(90deg,#60a5fa,#34d399,#a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: #a5b4fc;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+    border-radius: 18px;
+    margin-bottom: 40px;
+}
+
+/* BACKGROUNDS */
+.gamedev {
+    background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(255,255,255,0.02));
+}
+
+.media {
+    background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(255,255,255,0.02));
+}
+
+.fullstack {
+    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(255,255,255,0.02));
+}
+
+.certificates {
+    background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(255,255,255,0.02));
+}
+
+/* TITLES */
+h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    border-left: 4px solid #34d399;
+    padding-left: 10px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 16px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #60a5fa;
+}
+
+/* HERO VIDEO */
+.hero-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 22px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-card iframe {
+    width: 100%;
+    height: 460px;
+    border-radius: 14px;
+    border: none;
+}
+
+/* BUTTON */
+a.button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#3b82f6,#8b5cf6);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* BADGES FIX */
+.badges-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 900px) {
+    .badges-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.badge-card {
+    padding: 25px;
+}
+
+.badge-box {
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+/* ANIMATION */
+.card {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Yaakov Amoyal</h1>
+    <p>Software Engineer | Full-Stack Developer | Game Developer (Unity)</p>
+</header>
+
+<!-- GAME DEV -->
+<section class="gamedev">
+
+<h2><i class="fa-solid fa-gamepad"></i> Game Development</h2>
+
+<div class="grid">
+
+<div class="card">
+    <h3>Bricks Game</h3>
+    <p>Arcade game with score system and data persistence.</p>
+    <a class="button" href="https://github.com/Koby545/Data-Persistence-Project">GitHub</a>
+</div>
+
+<div class="card">
+    <h3>Maze PowerUps</h3>
+    <p>3D maze with dynamic power-ups and gameplay mechanics.</p>
+    <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
+</div>
+
+<div class="card">
+    <h3>Card Game (WebGL)</h3>
+    <p>Interactive progression-based Unity gameplay loop.</p>
+    <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
+</div>
+
+</div>
+</section>
+
+<!-- MEDIA -->
+<section class="media">
+
+<h2><i class="fa-solid fa-video"></i> Featured Gameplay Demo</h2>
+
+<div class="hero-card">
+
+<h3>Full Unity Gameplay Systems Showcase</h3>
+
+<p>
+Includes: movement, physics, audio system, background music,
+UI, score system, coins and power-ups.
+</p>
+
+<p style="color:#a5b4fc">
+A full gameplay loop connecting multiple systems into one complete experience.
+</p>
+
+<iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <h3>Unity Submission - Feeding Animals</h3>
+    <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6">View</a>
+</div>
+
+<div class="card">
+    <h3>Unity Submission - Fruit Ninja Style</h3>
+    <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131">View</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- FULLSTACK -->
+<section class="fullstack">
+
+<h2><i class="fa-solid fa-globe"></i> Software Development</h2>
+
+<div class="grid">
+
+<div class="card">
+    <h3>Shoplist App</h3>
+    <p>Mobile shared shopping system with sync.</p>
+    <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
+</div>
+
+<div class="card">
+    <h3>Cake Shop Web App</h3>
+    <p>Full-stack system using Node.js and MongoDB.</p>
+    <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
+</div>
+
+<div class="card">
+    <h3>Digital Bulletin System</h3>
+    <p>TV + Mobile + Backend using REST APIs.</p>
+
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_Server">Server</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp">TV</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_MobileApp">Mobile</a>
+</div>
+
+</div>
+</section>
+
 <!-- CERTIFICATES -->
 <section class="certificates">
 
@@ -6,7 +279,7 @@
 <div class="card">
     <h3>B.Sc. Computer Science</h3>
     <p>The College of Management Academic Studies</p>
-    <p>GPA: 84 | Graduated 2024</p>
+    <p>Graduated 2024 | GPA: 84</p>
 </div>
 
 <div class="badges-grid">
@@ -14,15 +287,15 @@
 <div class="card badge-card">
     <h3>Unity Essentials Pathway</h3>
     <div class="badge-box" data-iframe-width="150" data-iframe-height="270"
-        data-share-badge-id="f4d0b76a-67f9-4485-92f1-bc1dbb0c7707"
-        data-share-badge-host="https://www.credly.com"></div>
+    data-share-badge-id="f4d0b76a-67f9-4485-92f1-bc1dbb0c7707"
+    data-share-badge-host="https://www.credly.com"></div>
 </div>
 
 <div class="card badge-card">
     <h3>Unity Junior Programmer</h3>
     <div class="badge-box" data-iframe-width="150" data-iframe-height="270"
-        data-share-badge-id="ccb14c14-0c32-45a4-ace2-0f5d4ed9a5c2"
-        data-share-badge-host="https://www.credly.com"></div>
+    data-share-badge-id="ccb14c14-0c32-45a4-ace2-0f5d4ed9a5c2"
+    data-share-badge-host="https://www.credly.com"></div>
 </div>
 
 </div>
@@ -30,8 +303,31 @@
 <div class="card">
     <h3>Additional Unity Badges</h3>
     <p>
-    Publishing • Programming • 2D • 3D • Audio • Editor • OOP Systems • Scene Flow
+    Publishing • Programming • 2D • 3D • Audio • Editor • OOP • Scene Flow
     </p>
 </div>
 
 </section>
+
+<footer>
+© 2026 Yaakov Amoyal — Portfolio
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+}, {threshold: 0.15});
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+<script async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+</body>
+</html>
