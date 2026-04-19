@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Yaakov Amoyal | Game Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yaakov Amoyal | Software & Game Developer</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
@@ -13,25 +14,33 @@ body {
     font-family: 'Inter', sans-serif;
     background: #0b0f1a;
     color: white;
+    overflow-x: hidden;
 }
 
 /* HERO */
 header {
     text-align: center;
-    padding: 80px 20px;
+    padding: 90px 20px;
     background: radial-gradient(circle at top, #1b2a4a, #0b0f1a);
+    animation: fadeDown 1s ease-out;
 }
 
 header h1 {
-    font-size: 48px;
+    font-size: 52px;
     margin: 0;
     font-weight: 800;
 }
 
 header p {
     color: #9aa4b2;
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 18px;
+}
+
+/* ANIMATION */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* SECTIONS */
@@ -57,11 +66,17 @@ h2 {
     border-radius: 14px;
     transition: 0.3s;
     backdrop-filter: blur(10px);
+    animation: fadeUp 0.8s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: #4da3ff;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .card h3 {
@@ -78,6 +93,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* TAG */
 .tag {
     background: #1f2a44;
     padding: 3px 8px;
@@ -102,6 +118,35 @@ footer {
     color: #6b7280;
     font-size: 14px;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    iframe {
+        height: 220px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+}
+
+/* subtle glow effect */
+.card:hover {
+    box-shadow: 0 0 20px rgba(77,163,255,0.15);
+}
 </style>
 
 </head>
@@ -110,69 +155,98 @@ footer {
 
 <header>
     <h1>Yaakov Amoyal</h1>
-    <p>Game Developer | Unity | C# | Gameplay Systems</p>
+    <p>Software Engineer | Full-Stack Developer | Game Developer (Unity, C#)</p>
 </header>
 
 <section>
 
 <h2>About Me</h2>
+
 <p>
-Computer Science graduate focused on game development with Unity.
-I build gameplay systems, AI mechanics, UI systems, and interactive experiences.
+Computer Science graduate with experience in both <b>Full-Stack development</b> and <b>Game Development</b>.
+</p>
+
+<p>
+I build scalable web applications using Node.js, Express, and MongoDB, and also develop Unity games with C# focusing on gameplay systems, AI, and interactive mechanics.
+</p>
+
+<p>
+I enjoy turning ideas into complete systems — from backend logic to playable game experiences.
 </p>
 
 <p>Email: <a href="mailto:koby0304@gmail.com">koby0304@gmail.com</a></p>
 
 </section>
 
+<!-- FULLSTACK -->
 <section>
 
-<h2>Projects</h2>
+<h2>Software & Web Projects</h2>
 
 <div class="card">
-    <h3>🧱 Bricks Game <span class="tag">GitHub</span></h3>
+    <h3>Online Shoplist App <span class="tag">Full Stack</span></h3>
+    <p>Android app for managing shared shopping lists with authentication and APIs.</p>
+    <a href="https://github.com/Koby545/AndroidAppProject" target="_blank">View Code</a>
+</div>
+
+<div class="card">
+    <h3>Cake Shop Web App <span class="tag">Full Stack</span></h3>
+    <p>E-commerce web app with Node.js, Express, and MongoDB backend.</p>
+    <a href="https://github.com/Koby545/CakeShop1" target="_blank">View Code</a>
+</div>
+
+<div class="card">
+    <h3>Digital Bulletin System <span class="tag">System Design</span></h3>
+    <p>Multi-platform system with REST API backend and mobile + TV apps.</p>
+</div>
+
+</section>
+
+<!-- GAME DEV -->
+<section>
+
+<h2>Game Development Projects</h2>
+
+<div class="card">
+    <h3>Bricks Game <span class="tag">Unity</span></h3>
     <p>Brick breaker game with save system and leaderboard.</p>
     <a href="https://github.com/Koby545/Data-Persistence-Project" target="_blank">View Code</a>
 </div>
 
 <div class="card">
-    <h3>🧩 Maze PowerUps <span class="tag">GitHub</span></h3>
-    <p>Procedural maze with power-ups and timed effects.</p>
+    <h3>Maze PowerUps <span class="tag">Unity</span></h3>
+    <p>3D maze with procedural systems and power-ups.</p>
     <a href="https://github.com/Koby545/UnityFinalProject" target="_blank">View Code</a>
 </div>
 
 <div class="card">
-    <h3>🎮 Card Game <span class="tag">WebGL</span></h3>
-    <p>Short gameplay loop with progression system.</p>
+    <h3>Card Game <span class="tag">WebGL</span></h3>
+    <p>Playable card-based progression system.</p>
     <a href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity" target="_blank">Play Game</a>
 </div>
 
 </section>
 
+<!-- MEDIA -->
 <section>
 
-<h2>🎥 Media Showcase</h2>
+<h2>Additional Projects & Demos</h2>
 
 <div class="card">
-    <h3>Full Gameplay Systems Demo</h3>
-    <p>Movement, coins, audio, UI, and full gameplay loop.</p>
+    <h3>Gameplay Systems Demo</h3>
     <iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
 </div>
 
 <div class="card">
-    <h3>Feeding Animals Game</h3>
-    <a href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6" target="_blank">View Project</a>
-</div>
-
-<div class="card">
-    <h3>Fruit Ninja Style Game</h3>
-    <a href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">View Project</a>
+    <h3>Unity Submission Projects</h3>
+    <a href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6" target="_blank">Feeding Animals Game</a><br>
+    <a href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">Fruit Ninja Style Game</a>
 </div>
 
 </section>
 
 <footer>
-© 2026 Yaakov Amoyal — Game Developer Portfolio
+© 2026 Yaakov Amoyal — Software Engineer | Game Developer
 </footer>
 
 </body>
