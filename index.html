@@ -2,149 +2,177 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Yaakov Amoyal | Game Developer Portfolio</title>
+<meta charset="UTF-8">
+<title>Yaakov Amoyal | Game Developer</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0f0f0f;
-      color: white;
-      line-height: 1.6;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
-    header {
-      padding: 50px;
-      text-align: center;
-      background: #1a1a1a;
-    }
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0b0f1a;
+    color: white;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 36px;
-    }
+/* HERO */
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at top, #1b2a4a, #0b0f1a);
+}
 
-    h2 {
-      border-bottom: 1px solid #333;
-      padding-bottom: 5px;
-    }
+header h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: 800;
+}
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+header p {
+    color: #9aa4b2;
+    margin-top: 10px;
+    font-size: 18px;
+}
 
-    .card {
-      background: #1f1f1f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-    }
+/* SECTIONS */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
 
-    a {
-      color: #4da3ff;
-      text-decoration: none;
-    }
+h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4da3ff;
+    padding-left: 10px;
+}
 
-    iframe {
-      width: 100%;
-      height: 320px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 14px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
 
-    .tag {
-      background: #333;
-      padding: 3px 8px;
-      border-radius: 5px;
-      font-size: 12px;
-      margin-left: 5px;
-    }
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #4da3ff;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #1a1a1a;
-      margin-top: 40px;
-    }
-  </style>
+.card h3 {
+    margin-top: 0;
+}
+
+a {
+    color: #4da3ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.tag {
+    background: #1f2a44;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+/* VIDEO */
+iframe {
+    width: 100%;
+    height: 360px;
+    border-radius: 12px;
+    margin-top: 10px;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+    font-size: 14px;
+}
+</style>
 
 </head>
 
 <body>
 
 <header>
-  <h1>Yaakov Amoyal</h1>
-  <p>Game Developer | Unity | C#</p>
+    <h1>Yaakov Amoyal</h1>
+    <p>Game Developer | Unity | C# | Gameplay Systems</p>
 </header>
 
 <section>
 
-  <h2>About Me</h2>
-  <p>
-    I am a Computer Science graduate with a strong focus on game development using Unity and C#.
-    I specialize in gameplay systems, AI logic, UI systems, and interactive mechanics.
-    I enjoy building small complete games and improving them into structured, scalable systems.
-  </p>
+<h2>About Me</h2>
+<p>
+Computer Science graduate focused on game development with Unity.
+I build gameplay systems, AI mechanics, UI systems, and interactive experiences.
+</p>
 
-  <p>
-    Email: <a href="mailto:koby0304@gmail.com">koby0304@gmail.com</a>
-  </p>
+<p>Email: <a href="mailto:koby0304@gmail.com">koby0304@gmail.com</a></p>
 
 </section>
 
 <section>
 
-  <h2>Projects</h2>
+<h2>Projects</h2>
 
-  <div class="card">
+<div class="card">
     <h3>🧱 Bricks Game <span class="tag">GitHub</span></h3>
-    <p>Brick breaker game with persistent save system and leaderboard.</p>
-    <a href="https://github.com/Koby545/Data-Persistence-Project" target="_blank">View GitHub</a>
-  </div>
+    <p>Brick breaker game with save system and leaderboard.</p>
+    <a href="https://github.com/Koby545/Data-Persistence-Project" target="_blank">View Code</a>
+</div>
 
-  <div class="card">
+<div class="card">
     <h3>🧩 Maze PowerUps <span class="tag">GitHub</span></h3>
-    <p>Procedural maze system with power-ups and timed effects.</p>
-    <a href="https://github.com/Koby545/UnityFinalProject" target="_blank">View GitHub</a>
-  </div>
+    <p>Procedural maze with power-ups and timed effects.</p>
+    <a href="https://github.com/Koby545/UnityFinalProject" target="_blank">View Code</a>
+</div>
 
-  <div class="card">
+<div class="card">
     <h3>🎮 Card Game <span class="tag">WebGL</span></h3>
-    <p>Short card-based gameplay system with progression mechanics.</p>
-    <a href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity" target="_blank">Play WebGL</a>
-  </div>
+    <p>Short gameplay loop with progression system.</p>
+    <a href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity" target="_blank">Play Game</a>
+</div>
 
 </section>
 
 <section>
 
-  <h2>🎥 Media Showcase</h2>
+<h2>🎥 Media Showcase</h2>
 
-  <div class="card">
-    <h3>🎮 Full Gameplay System Demo</h3>
-    <p>Shows movement, coins, audio system, UI, and gameplay loop.</p>
+<div class="card">
+    <h3>Full Gameplay Systems Demo</h3>
+    <p>Movement, coins, audio, UI, and full gameplay loop.</p>
     <iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
-  </div>
+</div>
 
-  <div class="card">
-    <h3>🐾 Feeding Animals Game</h3>
-    <p>Unity Learn submission project with interaction mechanics.</p>
+<div class="card">
+    <h3>Feeding Animals Game</h3>
     <a href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6" target="_blank">View Project</a>
-  </div>
+</div>
 
-  <div class="card">
-    <h3>🥷 Fruit Ninja Style Game</h3>
-    <p>Visual gameplay project (screenshots only).</p>
-    <a href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">View Submission</a>
-  </div>
+<div class="card">
+    <h3>Fruit Ninja Style Game</h3>
+    <a href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">View Project</a>
+</div>
 
 </section>
 
 <footer>
-  <p>© 2026 Yaakov Amoyal | Game Developer Portfolio</p>
+© 2026 Yaakov Amoyal — Game Developer Portfolio
 </footer>
 
 </body>
