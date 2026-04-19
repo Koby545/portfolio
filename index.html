@@ -4,28 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yaakov Amoyal | Portfolio</title>
+<title>Yaakov Amoyal | Game & Software Developer</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #0a0f1a;
+    background: radial-gradient(circle at top, #0f172a, #070a12);
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    background: rgba(10,15,26,0.6);
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px;
+    z-index: 1000;
+}
+
+nav a {
+    color: #a5b4fc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+nav a:hover {
     color: white;
 }
 
 /* HERO */
 header {
     text-align: center;
-    padding: 90px 20px 60px;
+    padding: 120px 20px 60px;
 }
 
 header h1 {
-    font-size: 56px;
+    font-size: 62px;
     margin: 0;
     background: linear-gradient(90deg,#60a5fa,#34d399,#a78bfa);
     -webkit-background-clip: text;
@@ -34,15 +63,16 @@ header h1 {
 
 header p {
     color: #a5b4fc;
+    font-size: 18px;
 }
 
 /* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
-    padding: 60px 20px;
-    border-radius: 18px;
-    margin-bottom: 40px;
+    padding: 70px 20px;
+    border-radius: 22px;
+    margin-bottom: 50px;
 }
 
 /* BACKGROUNDS */
@@ -59,22 +89,22 @@ section {
 }
 
 .certificates {
-    background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(255,255,255,0.02));
+    background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(255,255,255,0.02));
 }
 
 /* TITLES */
 h2 {
-    font-size: 26px;
-    margin-bottom: 25px;
+    font-size: 28px;
+    margin-bottom: 30px;
     border-left: 4px solid #34d399;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 18px;
 }
 
 @media (min-width: 900px) {
@@ -85,51 +115,61 @@ h2 {
 
 /* CARDS */
 .card {
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.12);
-    padding: 16px;
-    border-radius: 16px;
+    padding: 18px;
+    border-radius: 18px;
     transition: 0.3s;
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover {
     transform: translateY(-6px);
     border-color: #60a5fa;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
 /* HERO VIDEO */
 .hero-card {
-    background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
-    padding: 22px;
-    border-radius: 18px;
+    padding: 25px;
+    border-radius: 20px;
     margin-bottom: 25px;
 }
 
 .hero-card iframe {
     width: 100%;
-    height: 460px;
-    border-radius: 14px;
+    height: 480px;
+    border-radius: 16px;
     border: none;
 }
 
 /* BUTTON */
 a.button {
     display: inline-block;
-    margin-top: 8px;
-    padding: 8px 12px;
-    border-radius: 10px;
+    margin-top: 10px;
+    padding: 9px 14px;
+    border-radius: 12px;
     background: linear-gradient(90deg,#3b82f6,#8b5cf6);
     color: white;
     text-decoration: none;
     font-weight: 600;
 }
 
-/* BADGES FIX */
+/* CERTS FIX (IMPORTANT) */
 .badges-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 40px; /* 👈 FIX SPACING */
+    margin-top: 20px;
 }
 
 @media (min-width: 900px) {
@@ -139,29 +179,15 @@ a.button {
 }
 
 .badge-card {
-    padding: 25px;
-}
-
-.badge-box {
-    margin-top: 15px;
+    padding: 30px;
+    text-align: center;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 40px;
+    padding: 50px;
     color: #6b7280;
-}
-
-/* ANIMATION */
-.card {
-    opacity: 0;
-    transform: translateY(25px);
-}
-
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 </style>
 
@@ -169,33 +195,42 @@ footer {
 
 <body>
 
+<!-- NAV -->
+<nav>
+    <a href="#gamedev">Game Dev</a>
+    <a href="#media">Demo</a>
+    <a href="#fullstack">Fullstack</a>
+    <a href="#certs">Certifications</a>
+</nav>
+
+<!-- HERO -->
 <header>
     <h1>Yaakov Amoyal</h1>
-    <p>Software Engineer | Full-Stack Developer | Game Developer (Unity)</p>
+    <p>Game Developer | Unity | Full-Stack Engineer | C# & Systems Design</p>
 </header>
 
 <!-- GAME DEV -->
-<section class="gamedev">
+<section id="gamedev" class="gamedev">
 
-<h2><i class="fa-solid fa-gamepad"></i> Game Development</h2>
+<h2>🎮 Game Development</h2>
 
 <div class="grid">
 
 <div class="card">
     <h3>Bricks Game</h3>
-    <p>Arcade game with score system and data persistence.</p>
+    <p>Arcade gameplay with persistence, UI, and score system.</p>
     <a class="button" href="https://github.com/Koby545/Data-Persistence-Project">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Maze PowerUps</h3>
-    <p>3D maze with dynamic power-ups and gameplay mechanics.</p>
+    <p>3D system design with power-ups and gameplay logic.</p>
     <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Card Game (WebGL)</h3>
-    <p>Interactive progression-based Unity gameplay loop.</p>
+    <p>Interactive Unity gameplay loop with progression system.</p>
     <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
 </div>
 
@@ -203,65 +238,52 @@ footer {
 </section>
 
 <!-- MEDIA -->
-<section class="media">
+<section id="media" class="media">
 
-<h2><i class="fa-solid fa-video"></i> Featured Gameplay Demo</h2>
+<h2>🔥 Featured Gameplay Demo</h2>
 
 <div class="hero-card">
 
-<h3>Full Unity Gameplay Systems Showcase</h3>
+<h3>Full Unity Gameplay System</h3>
 
 <p>
-Includes: movement, physics, audio system, background music,
-UI, score system, coins and power-ups.
+This project demonstrates a complete game loop:
+player movement, physics, audio system, background music,
+UI system, scoring, and collectible mechanics.
 </p>
 
 <p style="color:#a5b4fc">
-A full gameplay loop connecting multiple systems into one complete experience.
+Designed as a full production-style gameplay system integrating multiple subsystems.
 </p>
 
 <iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
 
 </div>
 
-<div class="grid">
-
-<div class="card">
-    <h3>Unity Submission - Feeding Animals</h3>
-    <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6">View</a>
-</div>
-
-<div class="card">
-    <h3>Unity Submission - Fruit Ninja Style</h3>
-    <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131">View</a>
-</div>
-
-</div>
-
 </section>
 
 <!-- FULLSTACK -->
-<section class="fullstack">
+<section id="fullstack" class="fullstack">
 
-<h2><i class="fa-solid fa-globe"></i> Software Development</h2>
+<h2>💻 Software Development</h2>
 
 <div class="grid">
 
 <div class="card">
     <h3>Shoplist App</h3>
-    <p>Mobile shared shopping system with sync.</p>
+    <p>Mobile system with sync and shared lists.</p>
     <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Cake Shop Web App</h3>
-    <p>Full-stack system using Node.js and MongoDB.</p>
+    <p>Full-stack system using Node.js & MongoDB.</p>
     <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Digital Bulletin System</h3>
-    <p>TV + Mobile + Backend using REST APIs.</p>
+    <p>Multi-platform system (TV + Mobile + Backend REST API).</p>
 
     <a class="button" href="https://github.com/Koby545/FinalProject2024_Server">Server</a>
     <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp">TV</a>
@@ -271,29 +293,29 @@ A full gameplay loop connecting multiple systems into one complete experience.
 </div>
 </section>
 
-<!-- CERTIFICATES -->
-<section class="certificates">
+<!-- CERTS -->
+<section id="certs" class="certificates">
 
-<h2><i class="fa-solid fa-certificate"></i> Education & Certifications</h2>
+<h2>🏅 Education & Certifications</h2>
 
 <div class="card">
     <h3>B.Sc. Computer Science</h3>
     <p>The College of Management Academic Studies</p>
-    <p>Graduated 2024 | GPA: 84</p>
+    <p>GPA: 84 | Graduated 2024</p>
 </div>
 
 <div class="badges-grid">
 
 <div class="card badge-card">
-    <h3>Unity Essentials Pathway</h3>
-    <div class="badge-box" data-iframe-width="150" data-iframe-height="270"
+    <h3>Unity Essentials</h3>
+    <div data-iframe-width="180" data-iframe-height="300"
     data-share-badge-id="f4d0b76a-67f9-4485-92f1-bc1dbb0c7707"
     data-share-badge-host="https://www.credly.com"></div>
 </div>
 
 <div class="card badge-card">
     <h3>Unity Junior Programmer</h3>
-    <div class="badge-box" data-iframe-width="150" data-iframe-height="270"
+    <div data-iframe-width="180" data-iframe-height="300"
     data-share-badge-id="ccb14c14-0c32-45a4-ace2-0f5d4ed9a5c2"
     data-share-badge-host="https://www.credly.com"></div>
 </div>
@@ -301,7 +323,7 @@ A full gameplay loop connecting multiple systems into one complete experience.
 </div>
 
 <div class="card">
-    <h3>Additional Unity Badges</h3>
+    <h3>Additional Unity Training</h3>
     <p>
     Publishing • Programming • 2D • 3D • Audio • Editor • OOP • Scene Flow
     </p>
@@ -310,7 +332,7 @@ A full gameplay loop connecting multiple systems into one complete experience.
 </section>
 
 <footer>
-© 2026 Yaakov Amoyal — Portfolio
+© 2026 Yaakov Amoyal — Game & Software Developer
 </footer>
 
 <script>
