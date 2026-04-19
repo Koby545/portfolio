@@ -6,7 +6,6 @@
 
 <title>Yaakov Amoyal | Developer Portfolio</title>
 
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -15,7 +14,7 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #0b0f1a);
+    background: radial-gradient(circle at top, #0b1220, #070a12);
     color: white;
     overflow-x: hidden;
 }
@@ -27,8 +26,11 @@ header {
 }
 
 header h1 {
-    font-size: 56px;
+    font-size: 58px;
     margin: 0;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header p {
@@ -38,27 +40,27 @@ header p {
 
 /* SECTION */
 section {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: auto;
     padding: 50px 20px;
 }
 
 h2 {
     font-size: 26px;
-    border-left: 4px solid #60a5fa;
-    padding-left: 10px;
     margin-bottom: 25px;
+    padding-left: 10px;
+    border-left: 4px solid #34d399;
 }
 
 /* CARD */
 .card {
-    background: rgba(255,255,255,0.04);
+    background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
     border: 1px solid rgba(255,255,255,0.08);
     padding: 18px;
     margin: 15px 0;
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
+    border-radius: 18px;
     transition: 0.4s;
+    backdrop-filter: blur(12px);
     opacity: 0;
     transform: translateY(30px);
 }
@@ -69,18 +71,18 @@ h2 {
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: #60a5fa;
-    box-shadow: 0 15px 30px rgba(96,165,250,0.15);
+    transform: translateY(-7px);
+    border-color: #34d399;
+    box-shadow: 0 15px 40px rgba(52,211,153,0.12);
 }
 
 /* BUTTON */
 a.button {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 10px;
-    background: #2563eb;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -88,8 +90,24 @@ a.button {
 }
 
 a.button:hover {
-    background: #3b82f6;
-    transform: scale(1.05);
+    transform: scale(1.06);
+    filter: brightness(1.2);
+}
+
+/* TAG */
+.tag {
+    background: rgba(52,211,153,0.15);
+    color: #34d399;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+/* ICON */
+.icon {
+    color: #34d399;
+    margin-right: 6px;
 }
 
 /* GRID */
@@ -105,10 +123,12 @@ a.button:hover {
     }
 }
 
-/* ICON */
-.icon {
-    color: #60a5fa;
-    margin-right: 6px;
+/* VIDEO */
+iframe {
+    width: 100%;
+    height: 360px;
+    border-radius: 14px;
+    border: none;
 }
 
 /* FOOTER */
@@ -120,10 +140,8 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
-    header h1 {font-size: 38px;}
+    header h1 {font-size: 40px;}
 }
-
-/* FADE IN ON SCROLL JS SUPPORT */
 </style>
 
 </head>
@@ -131,7 +149,7 @@ footer {
 <body>
 
 <header>
-    <h1><i class="fa-solid fa-code"></i> Yaakov Amoyal</h1>
+    <h1>Yaakov Amoyal</h1>
     <p>Software Engineer | Full-Stack | Game Developer (Unity)</p>
 </header>
 
@@ -140,11 +158,11 @@ footer {
 <h2><i class="fa-solid fa-user icon"></i> About Me</h2>
 
 <p>
-Computer Science graduate experienced in Full-Stack development and Unity game development.
+Computer Science graduate with experience in Full-Stack systems and Unity game development.
 </p>
 
 <p>
-I build backend systems, web apps, and interactive game mechanics with focus on clean architecture and scalability.
+I enjoy building complete systems — from backend architecture to interactive gameplay experiences.
 </p>
 
 </section>
@@ -152,29 +170,29 @@ I build backend systems, web apps, and interactive game mechanics with focus on 
 <!-- FULLSTACK -->
 <section>
 
-<h2><i class="fa-solid fa-globe icon"></i> Software & Web Projects</h2>
+<h2><i class="fa-solid fa-globe icon"></i> Software Projects</h2>
 
 <div class="grid">
 
 <div class="card">
-    <h3><i class="fa-solid fa-cart-shopping icon"></i> Shoplist App</h3>
-    <p>Mobile app for shared shopping lists with authentication and real-time data.</p>
+    <h3>Shoplist App <span class="tag">Mobile</span></h3>
+    <p>Shared shopping list system with authentication and data sync.</p>
     <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
 </div>
 
 <div class="card">
-    <h3><i class="fa-solid fa-cake-candles icon"></i> Cake Shop Web App</h3>
-    <p>Full-stack e-commerce system with Node.js, Express, MongoDB.</p>
+    <h3>Cake Shop Web App <span class="tag">Full Stack</span></h3>
+    <p>Node.js + Express + MongoDB full e-commerce system.</p>
     <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
 </div>
 
 <div class="card">
-    <h3><i class="fa-solid fa-tv icon"></i> Bulletin System</h3>
-    <p>Multi-platform system (TV, mobile, backend) with REST API architecture.</p>
+    <h3>Digital Bulletin System <span class="tag">System</span></h3>
+    <p>Multi-platform system: TV app, mobile app, backend server with REST APIs.</p>
 
     <a class="button" href="https://github.com/Koby545/FinalProject2024_Server">Server</a>
-    <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp">TV</a>
-    <a class="button" href="https://github.com/Koby545/FinalProject2024_MobileApp">Mobile</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp">TV App</a>
+    <a class="button" href="https://github.com/Koby545/FinalProject2024_MobileApp">Mobile App</a>
 </div>
 
 </div>
@@ -183,55 +201,51 @@ I build backend systems, web apps, and interactive game mechanics with focus on 
 <!-- GAME DEV -->
 <section>
 
-<h2><i class="fa-solid fa-gamepad icon"></i> Game Development Projects</h2>
+<h2><i class="fa-solid fa-gamepad icon"></i> Game Development</h2>
 
 <div class="grid">
 
 <div class="card">
+    <h3>Gameplay Systems Demo</h3>
+    <p>
+        A full Unity gameplay showcase including:
+        <b>movement systems, physics interactions, sound effects, background music,
+        UI systems, scoring, and collectible objects (coins/power-ups)</b>.
+    </p>
+
+    <p style="color:#93c5fd">
+        This project demonstrates how different game systems work together in a complete playable loop.
+    </p>
+
+    <iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
+</div>
+
+<div class="card">
     <h3>Bricks Game</h3>
-    <p>Brick breaker with save system, UI, and score tracking.</p>
+    <p>Classic brick breaker with save system and scoring.</p>
     <a class="button" href="https://github.com/Koby545/Data-Persistence-Project">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Maze PowerUps</h3>
-    <p>3D maze system with procedural design and player power-ups.</p>
+    <p>3D maze with procedural gameplay and power-up system.</p>
     <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Card Game (WebGL)</h3>
-    <p>Short gameplay loop with progression and interactive mechanics.</p>
+    <p>Small interactive progression-based card system.</p>
     <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
 </div>
 
 </div>
 </section>
 
-<!-- MEDIA -->
-<section>
-
-<h2><i class="fa-solid fa-video icon"></i> Demos & Work</h2>
-
-<div class="card">
-    <h3>Full Gameplay Demo</h3>
-    <iframe width="100%" height="360"
-    src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
-</div>
-
-<div class="card">
-    <h3>Unity Submissions</h3>
-    <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6">Animals Game</a>
-    <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131">Fruit Ninja Style</a>
-</div>
-
-</section>
-
+<!-- FOOTER -->
 <footer>
 © 2026 Yaakov Amoyal — Software Engineer | Game Developer
 </footer>
 
-<!-- SCROLL ANIMATION -->
 <script>
 const cards = document.querySelectorAll('.card');
 
@@ -243,9 +257,7 @@ const observer = new IntersectionObserver(entries => {
     });
 }, {threshold: 0.15});
 
-cards.forEach(card => {
-    observer.observe(card);
-});
+cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
