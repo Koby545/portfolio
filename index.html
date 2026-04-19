@@ -15,8 +15,7 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     color: white;
-    overflow-x: hidden;
-    background: #070a12;
+    background: #0a0f1a; /* כהה אבל לא שחור */
 }
 
 /* HERO */
@@ -33,34 +32,38 @@ header h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* SECTIONS BASE */
+header p {
+    color: #a5b4fc;
+}
+
+/* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
     padding: 60px 20px;
-    border-radius: 20px;
+    border-radius: 18px;
     margin-bottom: 40px;
 }
 
-/* BACKGROUNDS PER SECTION */
+/* BACKGROUNDS */
 .fullstack {
-    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(15,23,42,0.6));
+    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(255,255,255,0.02));
 }
 
 .gamedev {
-    background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(15,23,42,0.6));
+    background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(255,255,255,0.02));
 }
 
 .media {
-    background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(15,23,42,0.6));
+    background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(255,255,255,0.02));
 }
 
 /* TITLES */
 h2 {
     font-size: 26px;
     margin-bottom: 25px;
-    padding-left: 10px;
     border-left: 4px solid #34d399;
+    padding-left: 10px;
 }
 
 /* GRID */
@@ -76,15 +79,16 @@ h2 {
     }
 }
 
-/* SMALL CARDS */
+/* CARDS */
 .card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 14px;
-    border-radius: 14px;
+    background: rgba(255,255,255,0.06); /* יותר בהיר */
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 16px;
+    border-radius: 16px;
     transition: 0.3s;
     opacity: 0;
     transform: translateY(25px);
+    backdrop-filter: blur(10px);
 }
 
 .card.show {
@@ -93,23 +97,23 @@ h2 {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: #60a5fa;
+    box-shadow: 0 15px 40px rgba(96,165,250,0.15);
 }
 
-/* BIG HERO CARD (VIDEO) */
+/* HERO VIDEO CARD (BIG) */
 .hero-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 25px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 22px;
     border-radius: 18px;
     margin-bottom: 25px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 .hero-card iframe {
     width: 100%;
-    height: 420px;
+    height: 460px;
     border-radius: 14px;
     border: none;
 }
@@ -120,7 +124,7 @@ a.button {
     margin-top: 8px;
     padding: 8px 12px;
     border-radius: 10px;
-    background: #2563eb;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -140,31 +144,31 @@ footer {
 
 <header>
     <h1>Yaakov Amoyal</h1>
-    <p>Software Engineer | Full-Stack | Game Developer (Unity)</p>
+    <p>Software Engineer | Full-Stack Developer | Game Developer (Unity)</p>
 </header>
 
 <!-- FULLSTACK -->
 <section class="fullstack">
 
-<h2><i class="fa-solid fa-globe"></i> Software & Web Development</h2>
+<h2><i class="fa-solid fa-globe"></i> Software Development</h2>
 
 <div class="grid">
 
 <div class="card">
     <h3>Shoplist App</h3>
-    <p>Shared mobile shopping system with authentication.</p>
+    <p>Mobile system for shared shopping lists with real-time data sync.</p>
     <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Cake Shop Web App</h3>
-    <p>Full-stack system built with Node.js + MongoDB.</p>
+    <p>Full-stack e-commerce platform built with Node.js, Express and MongoDB.</p>
     <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Digital Bulletin System</h3>
-    <p>TV app + Mobile app + Backend server (REST API architecture).</p>
+    <p>Multi-platform architecture (TV + Mobile + Backend) using REST APIs and real-time updates.</p>
 
     <a class="button" href="https://github.com/Koby545/FinalProject2024_Server">Server</a>
     <a class="button" href="https://github.com/Koby545/FinalProject2024_TvApp">TV</a>
@@ -179,25 +183,23 @@ footer {
 
 <h2><i class="fa-solid fa-gamepad"></i> Game Development</h2>
 
-
-<!-- SMALL CARDS -->
 <div class="grid">
 
 <div class="card">
     <h3>Bricks Game</h3>
-    <p>Brick breaker with scoring and save system.</p>
+    <p>Classic arcade game with score tracking and persistence system.</p>
     <a class="button" href="https://github.com/Koby545/Data-Persistence-Project">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Maze PowerUps</h3>
-    <p>3D maze with procedural generation and power-ups.</p>
+    <p>3D maze with power-up mechanics and gameplay interactions.</p>
     <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
 </div>
 
 <div class="card">
     <h3>Card Game (WebGL)</h3>
-    <p>Short progression-based interactive game.</p>
+    <p>Interactive progression-based gameplay loop with Unity WebGL build.</p>
     <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
 </div>
 
@@ -207,22 +209,27 @@ footer {
 <!-- MEDIA -->
 <section class="media">
 
-<h2><i class="fa-solid fa-video"></i> Additional Work</h2>
+<h2><i class="fa-solid fa-video"></i> Featured Gameplay Demo</h2>
 
-<div class="grid">
-<!-- BIG HERO VIDEO -->
+<!-- BIG VIDEO -->
 <div class="hero-card">
-    <h3>Gameplay Systems Demo</h3>
+    <h3>Full Gameplay Systems Showcase</h3>
 
     <p>
-        A full Unity gameplay system showing <b>movement, physics, sound effects, background music, UI systems,
-        scoring mechanics, and collectible objects (coins & power-ups)</b>.
-        <br><br>
-        This project demonstrates how multiple systems connect into a complete playable game loop.
+        This project demonstrates a complete Unity gameplay system including:
+        <b>player movement, physics interactions, sound effects, dynamic background music,
+        UI systems, scoring system, and collectible items (coins / power-ups)</b>.
+    </p>
+
+    <p style="color:#a5b4fc">
+        Built as a full gameplay loop experience — from input to feedback, audio, and progression.
     </p>
 
     <iframe src="https://www.youtube.com/embed/4z-PHJ6yy6w"></iframe>
 </div>
+
+<!-- SMALL ONES -->
+<div class="grid">
 
 <div class="card">
     <h3>Unity Submissions</h3>
