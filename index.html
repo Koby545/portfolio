@@ -3,168 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Yaakov Amoyal | Game & Software Developer</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+:root {
+    --green: #34d399;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --bg: #070a12;
+    --bg2: #0f172a;
+    --card: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.1);
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #070a12);
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
     color: white;
+    overflow-x: hidden;
 }
 
-/* NAV */
+/* ── NAV ── */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(12px);
-    background: rgba(10,15,26,0.6);
+    backdrop-filter: blur(16px);
+    background: rgba(7,10,18,0.8);
     display: flex;
     justify-content: center;
-    gap: 25px;
-    padding: 12px;
+    gap: 32px;
+    padding: 14px;
     z-index: 1000;
+    border-bottom: 1px solid var(--border);
 }
 
 nav a {
-    color: #a5b4fc;
+    color: #94a3b8;
     text-decoration: none;
+    font-family: 'Syne', sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
 }
 
-/* HERO */
+nav a:hover { color: var(--green); }
+
+/* ── HERO ── */
 header {
     text-align: center;
-    padding: 130px 20px 40px;
+    padding: 140px 20px 60px;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(52,211,153,0.08) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 header h1 {
-    font-size: 64px;
-    margin: 0;
-    background: linear-gradient(90deg,#60a5fa,#34d399,#a78bfa);
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 12px;
 }
 
 header p {
     color: #a5b4fc;
     font-size: 18px;
+    font-weight: 500;
 }
 
 header .sub {
-    color: #94a3b8;
-    font-size: 14px;
+    color: #475569;
+    font-size: 13px;
     margin-top: 10px;
+    letter-spacing: 0.05em;
 }
 
-/* SECTIONS */
+/* ── SECTIONS ── */
 section {
     max-width: 1100px;
-    margin: auto;
-    padding: 70px 20px;
-    border-radius: 22px;
-    margin-bottom: 70px;
+    margin: 0 auto 80px;
+    padding: 60px 24px;
+    border-radius: 24px;
 }
 
-.gamedev { background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(255,255,255,0.02)); }
-.fullstack { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(255,255,255,0.02)); }
-.certificates { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(255,255,255,0.02)); }
+.gamedev  { background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(255,255,255,0.01)); border: 1px solid rgba(52,211,153,0.1); }
+.fullstack{ background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(255,255,255,0.01)); border: 1px solid rgba(59,130,246,0.1); }
+.certificates { background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(255,255,255,0.01)); border: 1px solid rgba(245,158,11,0.1); }
 
 h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    border-left: 4px solid #34d399;
-    padding-left: 12px;
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    border-left: 3px solid var(--green);
+    padding-left: 14px;
+    letter-spacing: 0.02em;
 }
 
-/* GRID */
+/* ── GRID ── */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
 }
+@media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
 
-@media (min-width: 900px) {
-    .grid { grid-template-columns: 1fr 1fr; }
-}
-
-/* CARDS */
+/* ── CARDS ── */
 .card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 22px;
     border-radius: 18px;
-    transition: 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
     backdrop-filter: blur(12px);
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
+}
+.card.show { opacity: 1; transform: translateY(0); transition: opacity 0.5s, transform 0.5s; }
+.card:hover { transform: translateY(-5px); border-color: rgba(96,165,250,0.4); }
+
+.card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+.card p { color: #94a3b8; font-size: 14px; line-height: 1.6; }
 
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #60a5fa;
+/* ── FEATURED CARD ── */
+.featured-card {
+    background: linear-gradient(135deg, rgba(52,211,153,0.06), rgba(96,165,250,0.06));
+    border: 1px solid rgba(52,211,153,0.25);
+    padding: 28px;
+    border-radius: 22px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s, transform 0.6s;
 }
+.featured-card.show { opacity: 1; transform: translateY(0); }
 
-/* VIDEO */
-iframe {
+/* ── SCREENSHOT ── */
+.game-screenshot {
     width: 100%;
-    height: 420px;
     border-radius: 14px;
-    border: none;
-    margin-top: 12px;
+    margin: 18px 0;
+    border: 1px solid rgba(52,211,153,0.2);
+    display: block;
+    object-fit: cover;
+    max-height: 360px;
+    background: rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-/* BUTTON */
+.screenshot-placeholder {
+    width: 100%;
+    height: 280px;
+    border-radius: 14px;
+    margin: 18px 0;
+    border: 1px solid rgba(52,211,153,0.2);
+    background: linear-gradient(135deg, #0f2318, #0a1628);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #475569;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screenshot-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 30% 50%, rgba(52,211,153,0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 50%, rgba(96,165,250,0.05) 0%, transparent 50%);
+}
+
+.screenshot-placeholder .icon { font-size: 48px; opacity: 0.3; }
+
+/* ── TAGS ── */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.tag-green { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.2); }
+.tag-blue  { background: rgba(96,165,250,0.12);  color: #60a5fa; border: 1px solid rgba(96,165,250,0.2); }
+
+/* ── BUTTONS ── */
 a.button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     margin-top: 10px;
-    padding: 9px 14px;
-    border-radius: 12px;
-    background: linear-gradient(90deg,#3b82f6,#8b5cf6);
+    padding: 9px 16px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     color: white;
     text-decoration: none;
     font-weight: 600;
+    font-size: 13px;
+    transition: opacity 0.2s, transform 0.2s;
+}
+a.button:hover { opacity: 0.85; transform: translateY(-1px); }
+a.button.secondary {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
 }
 
-/* SKILLS */
+/* ── SKILLS ── */
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 12px;
     margin-top: 20px;
 }
-
-@media (min-width: 900px) {
-    .skills-grid { grid-template-columns: 1fr 1fr; }
-}
+@media (min-width: 900px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
 
 .skill-card {
-    background: rgba(255,255,255,0.05);
-    padding: 14px;
+    background: rgba(255,255,255,0.04);
+    padding: 14px 16px;
     border-radius: 12px;
-    font-size: 14px;
-    color: #d1d5db;
+    font-size: 13px;
+    color: #94a3b8;
+    border: 1px solid var(--border);
+    line-height: 1.6;
 }
+.skill-card strong { color: #e2e8f0; }
 
-/* FOOTER */
+/* ── FOOTER ── */
 footer {
     text-align: center;
     padding: 50px;
-    color: #6b7280;
+    color: #374151;
+    font-size: 13px;
+}
+
+/* ── VIDEO ── */
+iframe.video {
+    width: 100%;
+    height: 400px;
+    border-radius: 14px;
+    border: none;
+    margin-top: 14px;
 }
 </style>
 </head>
@@ -172,168 +288,172 @@ footer {
 <body>
 
 <nav>
+    <a href="#featured">Featured</a>
     <a href="#gamedev">Game Dev</a>
     <a href="#fullstack">Fullstack</a>
-    <a href="#certs">Certifications</a>
+    <a href="#certs">Education</a>
 </nav>
 
 <header>
     <h1>Yaakov Amoyal</h1>
     <p>Game & Software Developer</p>
-    <div class="sub">
-        Unity Gameplay Systems • C# • Full-Stack Development
-    </div>
+    <div class="sub">Unity · C# · Full-Stack · WebGL · Mobile</div>
 </header>
 
-<!-- FEATURED PROJECT -->
-<section class="gamedev">
+<!-- ── FEATURED ── -->
+<section id="featured" class="gamedev">
+    <h2>⭐ Featured Project</h2>
 
-<h2>⭐ Featured Project</h2>
+    <div class="featured-card">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+            <span style="font-size:28px;">🧟</span>
+            <div>
+                <h3 style="font-family:'Syne',sans-serif; font-size:22px; font-weight:800; margin:0;">Swarm</h3>
+                <p style="color:#64748b; font-size:12px; margin:0;">Top-Down Zombie Survival Shooter · Unity 6 · 2026</p>
+            </div>
+        </div>
 
-<div class="card">
-    <p style="color:#94a3b8; margin-bottom:10px;">
-    Latest project — complete game built from scratch
-    </p>
+        <!-- Screenshot – replace src with your actual screenshot path -->
+        <img
+            src="screenshots/gameplay.png"
+            alt="Swarm gameplay screenshot"
+            class="game-screenshot"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="screenshot-placeholder" style="display:none;">
+            <span class="icon">🎮</span>
+            <span>Swarm — Top-Down Shooter</span>
+        </div>
 
-    <h3>🧟 Swarm — Top-Down Zombie Survival Shooter</h3>
+        <p style="color:#94a3b8; line-height:1.7; margin-bottom:16px;">
+            A complete top-down zombie survival game built entirely from scratch with Unity 6.
+            Features procedurally generated maps, a wave-based enemy system with 3 enemy types,
+            boss fights every 5 waves, a full upgrade system (Rapid Fire → Double Shot → Triple Shot → Explosive Bullets),
+            real-time global leaderboard via LootLocker API, and support for both PC and mobile browsers.
+        </p>
 
-    <p>
-    A full-featured top-down shooter built with Unity 6. Includes wave-based enemy spawning, 
-    boss fights, upgrade system, global leaderboard, procedural map generation, 
-    and full mobile & PC support.
-    </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a class="button" href="https://yaakovamoyal.itch.io/swarm" target="_blank">🎮 Play on itch.io</a>
+            <a class="button secondary" href="https://github.com/yaakovamoyal/Swarm" target="_blank">💻 View Code</a>
+        </div>
 
-    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;">
-        <a class="button" href="https://yaakovamoyal.itch.io/swarm" target="_blank">🎮 Play on itch.io</a>
-        <a class="button" href="https://github.com/yaakovamoyal/Swarm" target="_blank">💻 GitHub</a>
+        <div class="tags" style="margin-top:18px;">
+            <span class="tag tag-green">Unity 6</span>
+            <span class="tag tag-green">C#</span>
+            <span class="tag tag-green">WebGL</span>
+            <span class="tag tag-green">Mobile & PC</span>
+            <span class="tag tag-blue">LootLocker API</span>
+            <span class="tag tag-blue">Global Leaderboard</span>
+            <span class="tag tag-blue">Procedural Map</span>
+            <span class="tag tag-blue">Wave System</span>
+        </div>
+
+        <div style="margin-top:20px; padding-top:20px; border-top:1px solid var(--border);">
+            <p style="color:#64748b; font-size:13px; margin-bottom:12px;">Previous gameplay projects:</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <a class="button secondary" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6" target="_blank">Feeding Animals</a>
+                <a class="button secondary" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131" target="_blank">Fruit Ninja Style</a>
+            </div>
+        </div>
     </div>
-
-    <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
-        <span style="background:rgba(52,211,153,0.15); padding:4px 10px; border-radius:8px; font-size:13px;">Unity 6</span>
-        <span style="background:rgba(52,211,153,0.15); padding:4px 10px; border-radius:8px; font-size:13px;">C#</span>
-        <span style="background:rgba(52,211,153,0.15); padding:4px 10px; border-radius:8px; font-size:13px;">WebGL</span>
-        <span style="background:rgba(52,211,153,0.15); padding:4px 10px; border-radius:8px; font-size:13px;">Mobile & PC</span>
-        <span style="background:rgba(52,211,153,0.15); padding:4px 10px; border-radius:8px; font-size:13px;">LootLocker API</span>
-        <span style="background:rgba(52,211,153,0.15); padding:4px 10px; border-radius:8px; font-size:13px;">Global Leaderboard</span>
-    </div>
-
-    <p style="margin-top:16px; color:#a5b4fc;">
-    Previous gameplay projects:
-    </p>
-
-    <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        <a class="button" href="https://learn.unity.com/submission/645e2ee2edbc2a6900dd9eb6">Feeding Animals</a>
-        <a class="button" href="https://learn.unity.com/submission/6501908eedbc2a73c401c131">Fruit Ninja Style</a>
-    </div>
-
-</div>
-
 </section>
 
-<!-- GAME DEV -->
+<!-- ── GAME DEV ── -->
 <section id="gamedev" class="gamedev">
-<h2>🎮 Game Development</h2>
+    <h2>🎮 Game Development</h2>
 
-<div class="grid">
-    
-<div class="card">
-    <h3>🧟 Swarm</h3>
-    <p>Top-down zombie survival shooter with wave system, boss fights, upgrades, and global leaderboard. PC & Mobile.</p>
-    <div style="display:flex; gap:8px; flex-wrap:wrap;">
-        <a class="button" href="https://yaakovamoyal.itch.io/swarm" target="_blank">Play</a>
-        <a class="button" href="https://github.com/yaakovamoyal/Swarm" target="_blank">GitHub</a>
+    <div class="grid">
+
+        <div class="card">
+            <h3>🧟 Swarm</h3>
+            <p>Top-down zombie survival shooter. Wave system, boss fights, upgrade tree, global leaderboard, procedural maps. PC & Mobile.</p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <a class="button" href="https://yaakovamoyal.itch.io/swarm" target="_blank">Play</a>
+                <a class="button secondary" href="https://github.com/yaakovamoyal/Swarm" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Full Gameplay System</h3>
+            <p>Complete gameplay implementation: movement, physics, audio, UI, scoring, and collectible mechanics.</p>
+            <a class="button" href="https://www.youtube.com/embed/4z-PHJ6yy6w" target="_blank">Watch Demo</a>
+        </div>
+
+        <div class="card">
+            <h3>Bricks Game</h3>
+            <p>2D arcade system with data persistence, UI flow and score tracking.</p>
+            <a class="button secondary" href="https://github.com/Koby545/Data-Persistence-Project" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card">
+            <h3>Maze PowerUps</h3>
+            <p>3D gameplay system with modular power-up mechanics and level design.</p>
+            <a class="button secondary" href="https://github.com/Koby545/UnityFinalProject" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card">
+            <h3>Card Game (WebGL)</h3>
+            <p>Playable browser-based Unity game with a full progression loop.</p>
+            <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity" target="_blank">Play</a>
+        </div>
+
     </div>
-</div>
-
-<div class="card">
-    <h3>Bricks Game</h3>
-    <p>2D arcade system with persistence, UI flow and score tracking.</p>
-    <a class="button" href="https://github.com/Koby545/Data-Persistence-Project">GitHub</a>
-</div>
-
-<div class="card">
-    <h3>Maze PowerUps</h3>
-    <p>3D gameplay system with modular power-up mechanics.</p>
-    <a class="button" href="https://github.com/Koby545/UnityFinalProject">GitHub</a>
-</div>
-
-<div class="card">
-    <h3>Card Game (WebGL)</h3>
-    <p>Playable browser-based Unity game with progression loop.</p>
-    <a class="button" href="https://play.unity.com/en/games/13de9b05-2521-451a-a15b-d431717d5c37/projectsunity">Play</a>
-</div>
-
-</div>
 </section>
 
-<!-- FULLSTACK -->
+<!-- ── FULLSTACK ── -->
 <section id="fullstack" class="fullstack">
-<h2>💻 Software Engineering</h2>
+    <h2>💻 Software Engineering</h2>
 
-<div class="grid">
+    <div class="grid">
 
-<div class="card">
-    <h3>Shoplist App</h3>
-    <p>Android app with shared lists and real-time synchronization.</p>
-    <a class="button" href="https://github.com/Koby545/AndroidAppProject">GitHub</a>
-</div>
+        <div class="card">
+            <h3>Shoplist App</h3>
+            <p>Android app with shared lists and real-time Firebase synchronization.</p>
+            <a class="button secondary" href="https://github.com/Koby545/AndroidAppProject" target="_blank">GitHub</a>
+        </div>
 
-<div class="card">
-    <h3>Cake Shop Web App</h3>
-    <p>Full-stack system using Node.js and MongoDB.</p>
-    <a class="button" href="https://github.com/Koby545/CakeShop1">GitHub</a>
-</div>
+        <div class="card">
+            <h3>Cake Shop Web App</h3>
+            <p>Full-stack e-commerce system using Node.js, Express and MongoDB.</p>
+            <a class="button secondary" href="https://github.com/Koby545/CakeShop1" target="_blank">GitHub</a>
+        </div>
 
-</div>
+    </div>
 </section>
 
-<!-- CERTS -->
+<!-- ── EDUCATION ── -->
 <section id="certs" class="certificates">
-<h2>🏅 Education & Certifications</h2>
+    <h2>🏅 Education & Skills</h2>
 
-<div class="card" style="margin-bottom: 18px;">
-    <h3>B.Sc. Computer Science</h3>
-    <p>College of Management Academic Studies — GPA 84</p>
-</div>
+    <div class="card" style="margin-bottom:14px;">
+        <h3>B.Sc. Computer Science</h3>
+        <p>College of Management Academic Studies — GPA 84</p>
+    </div>
 
-<div class="card">
-    <h3>UI/UX Certificate</h3>
-    <p>INT College (Mar 2023 – Jun 2023)</p>
-</div>
+    <div class="card" style="margin-bottom:24px;">
+        <h3>UI/UX Certificate</h3>
+        <p>INT College · Mar 2023 – Jun 2023</p>
+    </div>
 
-<div class="skills-grid">
-
-<div class="skill-card">
-<strong>Game Development:</strong> Unity, C#, Physics, UI Systems, Gameplay Design
-</div>
-
-<div class="skill-card">
-<strong>Software Engineering:</strong> OOP, Data Structures, Algorithms, REST APIs
-</div>
-
-<div class="skill-card">
-<strong>Fullstack:</strong> Node.js, MongoDB, JavaScript, Android (Java)
-</div>
-
-<div class="skill-card">
-<strong>Core CS:</strong> Operating Systems, Networking, Databases, Design Patterns
-</div>
-
-</div>
-
+    <div class="skills-grid">
+        <div class="skill-card"><strong>Game Development:</strong> Unity 6, C#, Physics, UI Systems, Gameplay Design, WebGL, Mobile</div>
+        <div class="skill-card"><strong>Software Engineering:</strong> OOP, Data Structures, Algorithms, REST APIs, Git</div>
+        <div class="skill-card"><strong>Fullstack:</strong> Node.js, MongoDB, JavaScript, Android (Java)</div>
+        <div class="skill-card"><strong>Core CS:</strong> Operating Systems, Networking, Databases, Design Patterns</div>
+    </div>
 </section>
 
-<footer>
-© 2026 Yaakov Amoyal
-</footer>
+<footer>© 2026 Yaakov Amoyal</footer>
 
 <script>
-const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card, .featured-card');
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add('show');
+    entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('show'), i * 80);
+        }
     });
-}, {threshold: 0.15});
+}, { threshold: 0.1 });
 cards.forEach(c => observer.observe(c));
 </script>
 
